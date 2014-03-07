@@ -1,0 +1,16 @@
+#########################################################
+###  BACKUP IPROD-DB-AU-03                        
+###  DAY ---> Friday                               
+###  DATE 23-08-2013                                  
+###  TAILLE du dump 0MB               
+### Debut du backup 16:04:21                                 
+### Fin du backup 16:04:21                                   
+### INFORMATION DU CLUSTER                                  
+
+Position du cluster: 9512c851-d299-11e2-0800-1d56cac47eab
+     
+
+Position du node: 9512c851-d299-11e2-0800-1d56cac47eab
+     
+#########################################################
+---------------------------------------------------------

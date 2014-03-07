@@ -1,0 +1,41 @@
+{% extends 'base2.html' %}
+
+
+{% block titre %}Cluster health {% endblock %}
+
+{% block left_menu %}
+								<li class="first"><a href="#">Informations systemes</a></li>
+								<li><a href="/backup">Status</a></li>
+								<li><a href="#">Check log</a></li>
+
+							{% endblock %}
+
+
+{% block content %}
+    <fieldset>
+                        <section>
+						<div class="post">
+							<h2>Backup Cluster Percona</h2>
+							<form id="contact" action="" method="post" class="niceform" novalidate>{% csrf_token %}
+        <dl>
+19             <dt>{{ form.hostname.label_tag }} :</dt>
+20             <dd>{{ form.hostname }}</dd>
+21             <dd>{{ form.hostname.errors }}</dd>
+22         </dl>
+
+
+        <dl>
+            <dt>{{ form.schema.label_tag }} :</dt>
+            <dd>{{ form.schema }}</dd>
+            <dd>{{ form.schema.errors }}</dd>
+        </dl>
+
+        <div class="break">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+                            <p>{{ message }}</p>
+						</div>
+					</section>
+    </fieldset>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><{{ title }}</title>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/base.css" />
+  </head>
+  <body>
+  <p id='test'>Cluster_gui</p>
+    <form action="/contact" method="post" class="niceform">
+      <dl>
+        <dt>{{form.subject.label_tag}} :</dt>
+        <dd>{{form.subject}}</dd>
+      </dl>
+      <dl>
+        <dt>{{form.message.label_tag}} :</dt>
+        <dd>{{form.message}}</dd>
+      </dl>
+      <dl>
+        <dt>{{form.sender.label_tag}} :</dt>
+        <dd>{{form.sender}}</dd>
+      </dl>
+      <dl>
+        <dt>{{form.cc_myself.label_tag}} :</dt>
+        <dd>{{form.cc_myself}}</dd>
+      </dl>
+      <div style="clear:left;margin-left:200px;">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>

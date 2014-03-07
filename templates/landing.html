@@ -1,0 +1,60 @@
+{% extends 'base2.html' %}
+
+
+{% block titre %}Cluster health {% endblock %}
+
+{% block left_menu %}
+								<li class="first"><a href="#">home</a></li>
+								<li><a href="/status/node01">Status</a></li>
+								<li><a href="/backup">Performance</a></li>
+								<li><a href="/info">Informations systemes</a></li>
+							{% endblock %}
+{% block left_menu_central %}
+					<section>
+						<h2>Statut des nodes</h2>
+						<ul class="style2">
+							<li class="first">
+								<p class="date"><a href="/status/node01">Status node01 </a></p>
+								<p><a href="/status/node01">iprod-au-03 </a></p>
+							</li>
+							<li>
+								<p class="date"><a href="/status/node02">Status node02 </a></p>
+								<p><a href="/status/node02">iprod-au-04</a></p>
+							</li>
+						</ul>
+					</section>
+                {% endblock %}
+
+
+{% block content %}<section>
+						<div class="post">
+							<h2 align="center" ><a>Etat du node {{ node }}</a></h2>
+                            <h3><p align="center">Parametres clés</p></h3>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+
+							<table class="tableau">
+                             <thead></thead>
+                              <tr></tr>
+
+                                 <tr class="row1"> <td  id={{ alerte_local_state }}>{{ local_state }}</td><td id={{ alerte_local_state }}>{{ local_state_val }}</td><td id={{ alerte_local_state }}><img height="20px" height="80px"  src={{ img_local_state }}></td></tr>
+                                 <tr class="row2"> <td  id={{ alerte_comment }}>{{ local_comment }}</td><td id={{ alerte_comment }}>{{ local_comment_val }}</td><td id={{ alerte_comment }}><img height="20px" height="80px"  src={{ img_comment }}></td></tr>
+                                <tr class="row1"> <td  id={{ alerte_size }}>{{ wsrep_cluster_size }}</td><td id={{ alerte_size }}>{{  wsrep_cluster_size_val }}</td><td id={{ alerte_size }}><img height="20px" height="80px" src={{ img_size }}></td></tr>
+                                <tr class="row2"> <td  id={{ alerte_open}}>{{ wsrep_ready }}</td><td id={{ alerte_open }}>{{  wsrep_ready_val }}</td><td id={{ alerte_open }}><img height="20px" height="80px" src={{ img_open }}></td></tr>
+
+
+                              </table>
+                             <details>
+                             <summary>configuration du node {{ node }}</summary>
+                            <table>
+                                <thead>Parametre de la configuration</thead>
+                            <fieldset>
+                                {% for item in list_of_queries %}
+                                <tr  class="{% cycle 'row1' 'row2' %}"><td id="row_status">{{ item.0 }}</td><td id="row_status">{{ item.1 }}</td><td id={{ alerte_open }}><img height="20px" height="80px" src={{ img_open }}></td></tr>
+                                {% endfor %}
+                            </fieldset>
+                            </table>
+                             </details>
+						</div>
+					</section>{% endblock %}

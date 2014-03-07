@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+
+<!--
+	Skylined: A responsive HTML5 website template by HTML5Templates.com
+	Released for free under the Creative Commons Attribution 3.0 license (html5templates.com/license)
+	Visit http://html5templates.com for more great templates or follow us on Twitter @HTML5T
+-->
+
+<html>
+<head>
+<title>Watch_dolphin</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<noscript>
+<link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/base.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/5grid/core.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/5grid/core-desktop.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/5grid/core-1200px.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/5grid/core-noscript.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style-desktop.css" />
+</noscript>
+<script src="{{ STATIC_URL }}css/5grid/jquery.js"></script>
+<script src="{{ STATIC_URL }}css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<!--[if IE 9]><link rel="stylesheet" href="{{ STATIC_URL }}css/style-ie9.css" /><![endif]-->
+</head><body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<header id="header">
+			<div class="5grid-layout">
+				<div class="row">
+					<div class="12u" id="logo"> <!-- Logo -->
+						<h1><a href="#" class="mobileUI-site-name">{% block titre %}Monitor Pool Db{% endblock %}</a></h1>
+						<p>tracking percona</p>
+					</div>
+				</div>
+			</div>
+			<div class="5grid-layout">
+				<div class="row">
+					<div  class="12u" id="menu">
+						<nav class="mobileUI-site-nav">
+							<ul> {% block main_menu %}
+								<li class="current_page_item"><a class="titre" href=""></a></li>
+								<li><a href="/status/node01">Status</a></li>
+								<li><a href="">Performance</a></li>
+								<li><a href="">Informations systemes</a></li>
+
+							</ul>{% endblock %}
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div id="page">
+		<div class="5grid-layout">
+			<div class="row">
+				<div class="3u" id="sidebar2">
+					<section>
+						<div class="sbox1">
+							<h2>Menu</h2>
+							<ul class="style1">{% block left_menu %}
+								<li class="first"><a href="/backup">Etat du cluster</a></li>
+								<li><a href="/status/node01">Status</a></li>
+								<li><a href="#">Performance</a></li>
+								<li><a href="#">Informations systemes</a></li>
+                                {% endblock %}
+							</ul>
+						</div>
+					</section>
+                {% block left_menu_central %}
+					<section>
+						<h2>Derniers backups</h2>
+						<ul class="style2">
+							<li class="first">
+								<p class="date"><a href="#">October <b>03</b></a></p>
+								<p><a href="#">iprod-au-03.tar.gz </a></p>
+							</li>
+							<li>
+								<p class="date"><a href="#">September <b>30</b></a></p>
+								<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
+							</li>
+						</ul>
+					</section>
+                {% endblock %}
+				</div>
+				<div class="9u mobileUI-main-content" id="content">
+                    {% block content %}<section>
+						<div class="post">
+							<h2>Etat du cluster</h2>
+							<table class="tableau">
+                             <thead><a class="titre"> cluster parameter</a></thead>
+                              <tr></tr>
+                                {% for k,v in dict.iteritems %}
+                                 <tr class="{% cycle 'row1' 'row2' %}"> <td>{{ k }}</td><td id="row_status">{{ v.0 }}</td></tr>
+
+                                 {% endfor %}
+                              </table>
+						</div>
+					</section>{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer-wrapper">
+	<div class="5grid-layout">
+		<div class="row" id="footer-content">
+			<div class="3u" id="box1">
+				<section>
+					<h2></h2>
+					<div class="balloon">
+
+					</div>
+					<div class="ballon-bgbtm">&nbsp;</div>
+					<p></p>
+				</section>
+			</div>
+			<div class="3u" id="box2">
+				<section>
+					<h2>Liens </h2>
+					<ul class="style6">
+						<li class="first">
+							<h3>Access to nagios</h3>
+							<p><a href="#">Acces Nagios</a></p>
+						</li>
+						<li>
+							<h3>Acess to paramaters</h3>
+							<p><a href="#">Acceder aux parametres clés du pool.</a></p>
+						</li>
+						<li>
+							<h3>Backup</h3>
+							<p><a href="#">Effectuer et lister les backups.</a></p>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div class="3u" id="box3">
+				<section>
+					<h2>Nulla luctus eleifend</h2>
+					<ul class="style5">
+						<li><a href="#"><img src="" alt=""></a></li>
+						<li><a href="#"><img src="" alt=""></a></li>
+						<li><a href="#"><img src="" alt=""></a></li>
+						<li><a href="#"><img src="" alt=""></a></li>
+						<li><a href="#"><img src="" alt=""></a></li>
+						<li><a href="#"><img src="" alt=""></a></li>
+					</ul>
+					<p class="button-style2"><a href="#">More Collections</a></p>
+				</section>
+			</div>
+			<div class="3u" id="box4">
+				<section>
+
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="copyright">
+	<div class="5grid-layout">
+		<div class="row">
+			<div class="12u">
+				<p>&copy; Pool monitor | Images: <a href="http://fotogrph.com/">Fotogrph</a> | Design: <a href="http://html5templates.com/">HTML5Templates.com</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

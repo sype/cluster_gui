@@ -1,0 +1,35 @@
+.niceform dl {clear:left;}
+
+.niceform dt {float:left;text-align:right;width:120px;line-height:25px;margin: 0 10px 10px 0;}
+
+.niceform dd {float:left;margin: 0 0 10px 0;}
+
+p#nom_node {
+
+    color: #ff0b24;
+}
+
+td#menu {
+
+   background-color:#FFD700;
+    width:100px;
+    height: 900px
+}
+
+td#content {
+
+    background-color:#EEEEEE;height:200px;width:400px;
+}
+
+tr.row1 {
+
+    background-color: #049ED5;
+}
+
+tr.row2 {
+
+    background-color: #000000;
+
+
+}
+
